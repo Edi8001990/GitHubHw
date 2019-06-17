@@ -56,6 +56,15 @@ public class GitHubAccountTest {
         assertEquals("Pro", githubAccount.buyPremiumAccount());
     }
 
+
+    @Test
+    public void canGetRepositoryByName(){
+        githubAccount.addRepository(repository1);
+        githubAccount.addRepository(repository2);
+        githubAccount.addRepository(repository3);
+        Repository foundRepository = githubAccount.findRepository("PHP/MySQL project");
+        assertEquals(repository1, foundRepository);
+    }
 //    @Test
 //    public void checkIfCanFindRepositoryByName(){
 //        ArrayList<Repository> repositories = new ArrayList<Repository>();

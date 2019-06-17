@@ -38,6 +38,15 @@ public class GitHubAccount {
         return proAccount;
     }
 
+    public Repository findRepository(String name) {
+        for(Repository repository : this.repositories){
+            if (repository.getName() == name){
+                return repository;
+            }
+        }
+        return null;
+    }
+
 
 //    public String findProject() {
 //            String project = "PHP/MySQL project";
